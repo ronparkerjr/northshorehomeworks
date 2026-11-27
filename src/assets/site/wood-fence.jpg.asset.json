@@ -1,11 +1,3 @@
 {
-  "version": 1,
-  "asset_id": "b8d8b5ae-2800-49ff-bea5-ecf1f2832b87",
-  "project_id": "18c04945-7819-43d2-abc1-861f7e0fbb75",
-  "url": "/__l5e/assets-v1/b8d8b5ae-2800-49ff-bea5-ecf1f2832b87/nshw-wood-fence.jpg",
-  "r2_key": "a/v1/18c04945-7819-43d2-abc1-861f7e0fbb75/b8d8b5ae-2800-49ff-bea5-ecf1f2832b87/nshw-wood-fence.jpg",
-  "original_filename": "nshw-wood-fence.jpg",
-  "size": 75898,
-  "content_type": "image/jpeg",
-  "created_at": "2026-11-01T16:33:07Z"
+  "url": "/images/nshw-wood-fence.jpg"
 }

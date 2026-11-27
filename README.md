@@ -1,29 +1,19 @@
-# Welcome to your Lovable project
+# North Shore Home Works
 
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+The site uses TanStack Start, React, TypeScript, and Tailwind CSS. The original and responsive site images are stored in `public/images`.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Use Bun to install dependencies and run the project.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install --frozen-lockfile
+bun run dev
+bun run test
 ```
 
-## Built with
+## Production
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+Build the site with `bun run build`. The default Nitro build runs on Node.js with `node .output/server/index.mjs`. Deploy the complete `.output` directory, including its public assets, to a host that supports the server runtime.
+
+Set `FORMSUBMIT_TO` as a private server environment variable to enable email delivery for estimate requests. Verify delivery on the deployment before switching the public domain.
