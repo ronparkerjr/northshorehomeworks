@@ -1,11 +1,3 @@
 {
-  "version": 1,
-  "asset_id": "024757b4-1e44-4845-a34a-afe08c4669f5",
-  "project_id": "18c04945-7819-43d2-abc1-861f7e0fbb75",
-  "url": "/__l5e/assets-v1/024757b4-1e44-4845-a34a-afe08c4669f5/nshw-logo.png",
-  "r2_key": "a/v1/18c04945-7819-43d2-abc1-861f7e0fbb75/024757b4-1e44-4845-a34a-afe08c4669f5/nshw-logo.png",
-  "original_filename": "nshw-logo.png",
-  "size": 13048,
-  "content_type": "image/png",
-  "created_at": "2026-11-01T16:22:11Z"
+  "url": "/images/nshw-logo.png"
 }
