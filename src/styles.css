@@ -1,0 +1,256 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --color-surface: var(--surface);
+  --color-primary-hover: var(--primary-hover);
+  --shadow-soft: var(--shadow-soft);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.25rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.205 0 0);
+  --surface: oklch(0.973 0.003 106);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.205 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.205 0 0);
+  --primary: oklch(0.53 0.19 25);
+  --primary-hover: oklch(0.46 0.17 25);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.973 0.003 106);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.973 0.003 106);
+  --muted-foreground: oklch(0.38 0 0);
+  --accent: oklch(0.96 0.02 25);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.93 0 0);
+  --input: oklch(0.9 0 0);
+  /* Phone/tablet text-entry line: light red, still 3:1 against white. */
+  --field-line: oklch(0.665 0.15 25);
+  --ring: oklch(0.53 0.19 25);
+  --shadow-soft: 0 1px 0 oklch(0.93 0 0), 0 8px 24px -16px oklch(0.2 0 0 / 0.18);
+  --shadow-card: 0 24px 60px -30px oklch(0.2 0 0 / 0.25);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 7rem; }
+  /* Fraunces ships with its "wonky" alternates on by default; the italic l
+     then carries a hooked ball terminal that reads as a chip out of the letter. */
+  body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; font-variation-settings: "WONK" 0; }
+  h1, h2, h3 { color: var(--foreground); }
+  :where(main, footer) :where(.grid, .flex) > * { min-width: 0; }
+  :where(h1, h2, h3, p, a, button, label, address) { overflow-wrap: break-word; }
+  :where(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--ring); outline-offset: 4px; }
+  img { max-width: 100%; }
+  button, a, summary, input, select, textarea { touch-action: manipulation; }
+}
+
+@utility container-site { margin-inline: auto; width: 100%; max-width: 88rem; padding-inline: 1rem; @media (min-width: 640px) { padding-inline: 1.5rem; } @media (min-width: 1024px) { padding-inline: 3rem; } }
+@utility section { padding-block: 3.5rem; @media (min-width: 768px) { padding-block: 5rem; } @media (min-width: 1280px) { padding-block: 7rem; } }
+@utility section-sm { padding-block: 3rem; }
+@utility display-xl { font-family: var(--font-display); font-weight: 400; font-size: 2rem; line-height: 1.12; letter-spacing: 0; @media (min-width: 375px) { font-size: 2.4rem; } @media (min-width: 768px) { font-size: 3.5rem; } @media (min-width: 1280px) { font-size: 4.5rem; } & em { font-style: italic; } }
+@utility display-fit { font-family: var(--font-display); font-weight: 400; line-height: 1.12; letter-spacing: 0; font-size: 1.375rem; @media (min-width: 375px) { font-size: 1.75rem; } @media (min-width: 414px) { font-size: 1.9375rem; } @media (min-width: 640px) { font-size: 2.4rem; } @media (min-width: 768px) { font-size: 3.5rem; } @media (min-width: 1280px) { font-size: 4.5rem; } & em { font-style: italic; } }
+@utility display-lg { font-family: var(--font-display); font-weight: 400; font-size: 1.9rem; line-height: 1.15; letter-spacing: 0; @media (min-width: 768px) { font-size: 2.5rem; } @media (min-width: 1280px) { font-size: 3.4rem; } }
+@utility display-lg-fit { font-family: var(--font-display); font-weight: 400; line-height: 1.15; letter-spacing: 0; white-space: nowrap; font-size: min(1.9rem, calc(6vw - 2px)); @media (min-width: 768px) { font-size: min(2.5rem, calc(6vw - 2px)); } @media (min-width: 1280px) { font-size: min(3.4rem, calc(6vw - 2px)); } }
+/* Town page titles: one line for every town name. Each title sets --title-em to its
+   own painted width in ems (see titleEm in src/content/towns.ts), so the type grows
+   to fill the column and the 99% keeps the widest name inside it. Titles that already
+   fit stay at the size used on the other interior pages. */
+@utility title-container { container-type: inline-size; }
+@utility display-town { font-family: var(--font-display); font-weight: 400; line-height: 1.15; letter-spacing: 0; white-space: nowrap; font-size: min(2.6rem, calc(99cqw / var(--title-em, 20.8))); }
+@utility lead { font-size: 1.125rem; line-height: 1.75; color: var(--muted-foreground); }
+@utility eyebrow { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.875rem; @media (min-width: 768px) { font-size: 0.95rem; } font-weight: 700; letter-spacing: 0; text-transform: uppercase; color: var(--foreground); &::before { content: ""; width: 2rem; height: 2px; flex-shrink: 0; background: var(--primary); } }
+@utility nav-link { position: relative; display: inline-flex; align-items: center; min-height: 24px; font-size: 0.9rem; font-weight: 500; color: var(--foreground); &::after { content: ""; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0; background: var(--primary); transition: width .3s; } &:hover::after { width: 100%; } }
+@utility btn { display: inline-flex; min-height: 44px; max-width: 100%; align-items: center; justify-content: center; gap: 0.5rem; border-radius: var(--radius); padding: 0.7rem 1.2rem; font-size: 0.875rem; font-weight: 600; white-space: normal; text-align: center; transition: all .25s; border: 1px solid transparent; & svg { flex-shrink: 0; } }
+@utility btn-lg { padding: 1rem 1.8rem; font-size: 0.95rem; }
+@utility btn-primary { background: var(--primary); color: var(--primary-foreground); &:hover { background: var(--primary-hover); transform: translateY(-1px); } }
+@utility btn-outline { border-color: var(--foreground); color: var(--foreground); &:hover { border-color: var(--primary); color: var(--primary); } }
+@utility link-arrow { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; font-size: .9rem; border-bottom: 1px solid var(--foreground); padding-bottom: 4px; &:hover { color: var(--primary); border-color: var(--primary); } }
+@utility hero-frame { position: relative; width: 100%; overflow: hidden; aspect-ratio: 4 / 3; @media (min-width: 768px) { aspect-ratio: 2 / 1; } }
+@utility hero-img { width: 100%; height: 100%; object-fit: cover; animation: hero-zoom 1.8s cubic-bezier(.2,.7,.2,1) both; }
+@utility hero-badge { position: absolute; left: 0; bottom: 0; display: flex; align-items: center; gap: 1rem; background: var(--background); padding: .75rem 1rem; @media (min-width: 768px) { padding: 1.5rem 2rem; } }
+@utility img-zoom { overflow: hidden; & img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s cubic-bezier(.2,.7,.2,1); } &:hover img { transform: scale(1.05); } }
+@utility service-card { display: block; &:hover h3 { color: var(--primary); } & h3 { transition: color .25s; } }
+@utility project-tile { position: relative; overflow: hidden; height: 100%; & img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.7,.2,1); } &:hover img { transform: scale(1.04); } }
+@utility project-caption { position: absolute; left: 1.25rem; bottom: 1.25rem; background: var(--background); padding: 1rem 1.25rem; max-width: 80%; }
+@utility quote-card { height: 100%; background: var(--surface); padding: 2rem; border-top: 2px solid var(--primary); }
+@utility form-card { min-width: 0; background: var(--background); padding: 1.25rem; box-shadow: var(--shadow-card); @media (min-width: 640px) { padding: 2rem; } @media (min-width: 1280px) { padding: 3rem; } }
+@utility form-card-compact { min-width: 0; background: var(--background); padding: 1.25rem; border: 1px solid var(--border); box-shadow: var(--shadow-card); @media (min-width: 640px) { padding: 1.5rem; } }
+@utility field-label { display: block; margin-bottom: .5rem; font-size: .875rem; font-weight: 600; letter-spacing: 0; color: var(--muted-foreground); }
+@utility field { width: 100%; min-width: 0; min-height: 48px; border: 0; border-bottom: 1px solid var(--input); background: transparent; padding: .6rem 0; font-size: 1rem; transition: border-color .2s; @media (max-width: 1279px) { border-bottom: 2px solid var(--field-line); } &:focus { border-color: var(--primary); } &:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; } }
+@utility footer-title { margin-bottom: 1.25rem; font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+@utility footer-link { color: var(--muted-foreground); &:hover { color: var(--primary); } }
+@utility reveal { transform: translateY(12px); transition: transform .9s cubic-bezier(.2,.7,.2,1); &.is-visible { transform: none; } @media (prefers-reduced-motion: reduce) { transform: none; } }
+
+@utility display-md { font-family: var(--font-display); font-weight: 400; font-size: 1.7rem; line-height: 1.2; letter-spacing: 0; @media (min-width: 768px) { font-size: 2.1rem; } @media (min-width: 1280px) { font-size: 2.4rem; } }
+@utility service-hero { position: relative; height: 260px; overflow: hidden; @media (min-width: 768px) { height: 460px; } @media (min-width: 1280px) { height: 600px; } }
+@utility service-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, var(--background) 100%); }
+@utility service-hero-card { background: var(--background); padding: 2.5rem 1.5rem 0; @media (min-width: 768px) { padding: 3.5rem 3.5rem 0; } }
+@utility chip { display: inline-flex; align-items: center; min-height: 44px; border: 1px solid var(--border); padding: .5rem 1rem; font-size: .875rem; font-weight: 500; transition: all .2s; &:hover { border-color: var(--primary); color: var(--primary); } }
+@utility option-cell { background: var(--background); padding: 2rem; transition: background .25s; &:hover { background: var(--accent); } }
+@utility guarantee-card { border-top: 3px solid var(--primary); background: var(--surface); padding: 1.5rem; @media (min-width: 768px) { padding: 3.5rem; } }
+@utility faq { border-bottom: 1px solid var(--border); & summary { display: flex; cursor: pointer; list-style: none; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.5rem; font-size: 1.125rem; font-weight: 600; } & summary::-webkit-details-marker { display: none; } &[open] .faq-icon { transform: rotate(45deg); color: var(--primary); } }
+@utility faq-icon { font-size: 1.5rem; font-weight: 300; transition: transform .25s; }
+@utility related-card { display: block; }
+@utility mega-panel { border-top: 1px solid var(--border); background: var(--background); animation: mega-in .25s ease both; }
+@utility mega-link { font-size: .9rem; color: var(--muted-foreground); transition: color .2s; &:hover { color: var(--primary); } }
+@utility chip-active { background: var(--foreground); border-color: var(--foreground); color: var(--background); &:hover { color: var(--background); } }
+@utility masonry { columns: 1; column-gap: 1.5rem; animation: mega-in .4s ease both; @media (min-width: 640px) { columns: 2; } @media (min-width: 1024px) { columns: 3; } }
+@utility masonry-item { break-inside: avoid; margin-bottom: 2rem; }
+@utility gallery-tile { position: relative; display: block; width: 100%; overflow: hidden; cursor: zoom-in; & img { width: 100%; object-fit: cover; transition: transform .9s cubic-bezier(.2,.7,.2,1); } &:hover img { transform: scale(1.04); } &:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; } }
+@utility gallery-expand { position: absolute; right: 1rem; top: 1rem; display: flex; height: 2.25rem; width: 2.25rem; align-items: center; justify-content: center; background: var(--background); opacity: 0; transition: opacity .3s; .group:hover &, .group:focus-visible & { opacity: 1; } }
+@utility lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: calc(4.5rem + env(safe-area-inset-top)) 1rem calc(5rem + env(safe-area-inset-bottom)); background: color-mix(in oklab, var(--background) 96%, transparent); backdrop-filter: blur(6px); animation: mega-in .25s ease both; @media (min-width: 768px) { padding-inline: 6rem; } }
+@utility lightbox-img { max-height: calc(100dvh - 15rem - env(safe-area-inset-top) - env(safe-area-inset-bottom)); max-width: 100%; object-fit: contain; animation: mega-in .35s ease both; box-shadow: var(--shadow-card); }
+@utility lightbox-btn { position: absolute; z-index: 10; display: flex; height: 3rem; width: 3rem; align-items: center; justify-content: center; border: 1px solid var(--border); background: var(--background); color: var(--foreground); transition: all .2s; &:hover { border-color: var(--primary); color: var(--primary); } }
+
+@keyframes mega-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+@keyframes hero-zoom { from { transform: scale(1.08); opacity: .6; } to { transform: scale(1); opacity: 1; } }
+
+/* The line draws itself, holds, wipes away to the right, waits, then starts over.
+   Base state is fully visible so visitors who prefer less motion still see a complete line. */
+@keyframes underline-draw {
+  0% { clip-path: inset(0 100% 0 0); animation-timing-function: cubic-bezier(.2,.7,.2,1); }
+  28% { clip-path: inset(0 0 0 0); animation-timing-function: linear; }
+  62% { clip-path: inset(0 0 0 0); animation-timing-function: ease-in; }
+  82% { clip-path: inset(0 0 0 100%); animation-timing-function: linear; }
+  100% { clip-path: inset(0 0 0 100%); }
+}
+.hero-underline { position: relative; white-space: nowrap; }
+.hero-underline::after { content: ""; position: absolute; left: 0; right: 0; bottom: -0.06em; height: 0.075em; border-radius: 999px; background: var(--primary); clip-path: inset(0 0 0 0); animation: underline-draw 4.4s linear 0.7s infinite; }
+
+@utility mobile-page-space { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); @media (min-width: 1280px) { padding-bottom: 0; } }
+@utility mobile-menu { height: calc(100dvh - 5rem); overflow-y: auto; overscroll-behavior: contain; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
+@utility skip-link { position: fixed; top: .5rem; left: .5rem; z-index: 120; clip-path: inset(100%); transform: translateY(-150%); background: var(--background); color: var(--foreground); padding: .75rem 1rem; &:focus { clip-path: none; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  .img-zoom:hover img, .gallery-tile:hover img, .project-tile:hover img { transform: none; }
+}
+
+.nav-star { animation: nav-star-twinkle 3.2s ease-in-out infinite; transform-origin: center; }
+@keyframes nav-star-twinkle { 0%,70%,100% { transform: scale(1) rotate(0); opacity: 1; } 80% { transform: scale(1.3) rotate(18deg); opacity: .85; } 90% { transform: scale(1) rotate(0); } }
+@media (prefers-reduced-motion: reduce) { .nav-star { animation: none; } }
